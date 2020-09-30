@@ -76,11 +76,12 @@
     .count {
       display: inline-block;
       font-family: monospace;
-      font-size: 0.846rem;
+      /* font-size: 0.846rem; */
       width: 1.82em;
       line-height: 1.82em;
       text-align: center;
       color: #000;
+
       background-position-y: #fecc00;
       border-radius: 50px;
     }
@@ -127,12 +128,12 @@
 <body>
   <div class="content">
     <div id="acteurs">
-      <!-- <div class="acteur">
+      <div class="acteur">
         <div class="portrait"><img src="https://workshop.neotechweb.net/ws/ciamovie/1.0.0/acteurs/1.jpg"></img></div>
         <div class="nom">Sylvester Stalone</div>
         <div class="info"><img class="flag" src="https://workshop.neotechweb.net/ws/flags/64/us.png">8 octobre 1949</div>
-        <div class="count">58 films</div>
-      </div> -->
+        <div class="info">58 films</div>
+      </div>
     </div>
 
     <div id="films">
@@ -205,7 +206,7 @@
         info.className = 'info';
 
         var count = document.createElement('div');
-        // count.className = 'count';
+        count.className = 'info';
 
         var portraitImg = new Image();
         portraitImg.src = `https://workshop.neotechweb.net/ws/ciamovie/1.0.0/acteurs/${id}.jpg`;
