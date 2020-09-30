@@ -21,10 +21,10 @@ self.addEventListener('fetch', function (event) {
           return response;
         }
         return fetch(event.request)
-          .then(function(cache) {
+          .then(function (cache) {
             cache.put(event.request, response.clone());
             return response;
-          })
+          });
       }
       )
   );
