@@ -20,12 +20,14 @@ self.addEventListener('fetch', function (event) {
         if (response) {
           return response;
         }
+
         return fetch(event.request)
-          .then(function (cache) {
-            cache.put(event.request, response.clone());
-            return response;
+          .then(function (response) {
+            return caches.open(cacheName)
+              .then(function (cache) {
+                cache.put(event.request, response.clone());
+              });
           });
-      }
-      )
+      })
   );
 });
