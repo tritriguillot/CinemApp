@@ -216,12 +216,14 @@
         info.innerText = 'Blablabla';
 
         // count.innerText = '38 films';
-        var nb = document.createElement('span');
-        nb.className = "count";
-        nb.innerText = "38";
+        // var nb = document.createElement('span');
+        // nb.className = "count";
+        // nb.innerText = "38";
 
-        count.appendChild(nb);
-        count.innerText = " films";
+        count.innerHTML = "<span class='count'>38</span> films";
+
+        // count.appendChild(nb);
+        // count.innerText = " films";
 
         // var input = document.createElement('input');
         // input.setAttribute('type', 'hidden');
