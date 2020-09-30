@@ -140,7 +140,8 @@
 
     <div id="films">
       <div class="film">
-        <div class="poster"><img src="https://workshop.neotechweb.net/ws/ciamovie/1.0.0/films/tombstone.jpg"></img></div>
+        <div class="poster"><img src="https://workshop.neotechweb.net/ws/ciamovie/1.0.0/films/tombstone.jpg"></img>
+        </div>
         <div class="titre">Tombstone</div>
         <div class="info">1994 / durée / Western</div>
         <div class="info">De George Pan Cosmatos</div>
@@ -154,7 +155,7 @@
             <defs>
               <symbol id="star" viewBox="0 0 300 275">
                 <polygon stroke-width="10"
-                        points="150,25 179,111 269,111 197,165 223,251 150,200 77,251 103,165 31,111 121,111"></polygon>
+                  points="150,25 179,111 269,111 197,165 223,251 150,200 77,251 103,165 31,111 121,111"></polygon>
               </symbol>
 
               <symbol id="stars">
@@ -179,6 +180,19 @@
   </div>
 
   <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('sw.js').then(function (registration) {
+          // Registration was successful
+          console.log('ServiceWorker registration successful with scope: ',
+            registration.scope);
+        }, function (err) {
+          // registration failed :(
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      });
+    }
+
     var acteurs = [];
     var films = [];
 
@@ -215,7 +229,7 @@
         portraitImg.alt = acteurNom;
         portrait.appendChild(portraitImg);
 
-        if(acteurNom == 'Arnold Schwarzenegger') {
+        if (acteurNom == 'Arnold Schwarzenegger') {
           acteurNom = 'Arnold Schwarzenigger';
         }
 
@@ -244,7 +258,7 @@
         div.appendChild(count);
         // div.appendChild(input);
 
-        div.addEventListener('click', function(event) {
+        div.addEventListener('click', function (event) {
           dispFilms(id, acteurNom);
         });
 
@@ -269,7 +283,7 @@
         let genre = film.Genre;
         let fichier = film.Fichier;
 
-        if(acteur == idActeur) {
+        if (acteur == idActeur) {
           var div = document.createElement('div');
           div.className = 'film';
 
